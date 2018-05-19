@@ -1,0 +1,425 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>A11Y Wars:  The Accessibility Interpretation Problem</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <style>
+  p a[href] {
+    text-decoration: underline;
+  }
+  </style>
+</head>
+
+<body>
+<div class="container">
+
+  <div role="banner">
+  <h1>A11Y Wars: The Accessibility Interpretation Problem</h1>
+  <p>by Glenda Sims and Wilco Fiers</p>
+  </div>
+
+  <div role="navigation">
+  <h2>Outline</h2>
+  <ol>
+    <li><a href="#intro">Introduction</a></li>
+    <li><a href="#sum">Exec Summary of Findings</a></li>
+    <li><a href="#problems">Causes of Interpretation Problems</a></li>
+    <li><a href="#diff">Causes of WCAG 2.0 Interpretation Differences</a></li>
+    <li><a href="#peace">Accessibility Peace Model</a>
+      <ul>
+        <li><a href="#min">Minimum Interpretation</a></li>
+        <li><a href="#optimized">Optimized Interpretation</a></li>
+        <li><a href="#ideal">Idealised Interpretation</a></li>
+      </ul>
+    </li>
+    <li><a href="#standard">Standardization</a></li>
+    <li><a href="#rec"">Recommendations</a></li>
+    <li><a href="#ack">Acknowledgements</a></li>
+    <li><a href="#append">Appendix A: Diverse Audience Roles of Accessibility Requirements</a></li>
+  </ol>
+  </div>
+
+  <div role="main">
+  <h2 id="intro">1. Introduction</h2>
+  <p>The Web Content Accessibility Guidelines (WCAG) version 2.0 has been the baseline for digital equality for many years now. It is anchored into many laws and regulations across the world, even beyond its original scope of web content, it is now used to test the quality of all sorts of digital environments. WCAG 2.0 has proven itself to be a durable and reliable web standard.</p>
+  <p>One of the most important changes resulting from the WCAG 1.0 to 2.0 update was that the standard became technology agnostic. This ensured that the standard would remain relevant as technologies change. However, this update came with a trade-off. WCAG 1.0 specifically mentioned the types of elements that could be problematic, and defined what had to be done with them. In order to adapt and provide broader applicability and longevity, WCAG 2.0 adjusted the level of specificity of some requirements.</p>
+  <p>While in many cases, WCAG 2.0 was much more refined, with all sorts of exceptions and edge cases being considered, the technology agnostic language left some room for interpretations in WCAG 2.0. There is general agreement on a majority of issues, otherwise WCAG wouldn&rsquo;t be as widely adopted as it was. While many organizations adopted WCAG 2.0, they found that they needed to document their own interpretations of WCAG 2.0 to improve consistency between testers.</p>
+  <p>In this whitepaper, we will take a closer look at a few, key WCAG 2.0 interpretations. We will investigate why interpretation differences can be problematic, even between different organisations and countries. We also explore why certain testers may have different interpretations. Then, we reveal how we may better deal with different WCAG interpretations, through the applicability of our proposed Accessibility Peace Model. This model intends to help all accessibility stakeholders understand where interpretation differences come from, and how to deal with them effectively.</p>
+  <h2 id="sum">2. Exec Summary of Findings</h2>
+  <p>Without a shared testing perspective, achieving accurate test results for compliance with WCAG 2.0 can be challenging and expensive. A common cause for inconsistent accessibility results between experts is accessibility testers doing their work with different goals in mind. Natural tension exists between the goals of users, designers, developers, testers, trainers, project managers, and executives. An unstated goal for testing can be a major source of inconsistent results between tests.</p>
+  <p>It is time to stop the accessibility interpretation wars. There is no &quot;one best way&quot; of interpreting accessibility standards. There are different interpretations, each valid and useful in their own right. This white paper identifies the following key perspectives used for accessibility testing. </p>
+  <ul>
+    <li><strong>Minimum</strong> - based on the normative text of the technical requirement. This perspective often seeks low cost and quick solution to meet legal requirements.</li>
+    <li><strong>Optimized</strong> - based on the spirit and the intent of the normative technical requirement, rather than just minimum compliance. This is a pragmatic approach to sustainable universal design that balances equal access, civil rights, and actual outcomes for users with disabilities with what is technically possible with other requirements, (business) goals for the product, and what is reasonable to achieve today. This perspective is the most effective use of resources in the long run.</li>
+    <li><strong>Ideal </strong>- based on a human factors approach that extends beyond legal compliance and pragmatic best practices. Focuses on quality of user experience for people with disabilities and innovative breakthroughs that eliminate barriers once considered impossible to solve. During initial phases, this perspective may be expensive.</li></ul>
+  <p>By clearly defining the perspective your organization is using for accessibility testing, your organisation can save time and lower costs. Make use of the free resources for learning how to make the web accessible provided by the <a href="https://www.w3.org/WAI/">W3C Web Accessibility Initiative: Education and Outreach</a>.Take advantage of the standardized testing methodologies being created by the W3C Accessibility Conformance Testing Task Force.</p>
+  <h2 id="problems">3. Causes of Interpretation Problems</h2>
+  <h3>3.1 Subjective Requirements</h3>
+  <p>One cause of differences in accessibility results is the subjectivity of accessibility requirements. This seems unavoidable. After all, most accessibility questions involve asking &ldquo;If A is substituted by B, does it still make sense to most users?&rdquo; There are as many methods for testing accessibility as there are people who do accessibility testing. Even for something as fundamental as deciding if the text alternative of an image is sufficiently descriptive, there are many different opinions. When can an image be considered decorative? How much detail should actually be described of complex images such as maps? Is it permitted to repeat visible text in the text alternative of an adjacent image? Etc.</p>
+  <p>To address this, WCAG 2.0 has a lot of documentation, especially thanks to the work of groups like the Education Outreach Working Group, there is even more out there to help accessibility testers do their job. This is very helpful when doing accessibility testing. It is important to note that even if someone is knowledgeable of all WCAG 2.0 requirements while testing there are, and will likely always be, new questions to which there are no obvious answers.</p>
+  <p>Interpretation differences of some accessibility requirements can be explained in part by their subjective nature. This type of interpretation difference is hard to avoid, although additional documentation may certainly help with that. What W3C documentation does not help with however, is regional differences in uses of assistive technologies. There are a variety of factors that can influence this, such as what languages are supported by the assistive technologies, what training is available for them, and what assistive technologies are covered by insurance companies. These differences can change what an appropriate accessibility support baseline is, and thus change the results of accessibility testing, sometimes quite significantly.</p>
+  <h3>3.2 Roles and Perspectives</h3>
+  <p>Not all interpretation differences can be explained away by pointing to the subjective components of WCAG 2.0 success criteria. It seems to the authors, that many such differences have a deeper cause, which is what much of the rest of this paper is dedicated to. Many years of experience in the field have shown us that people who approach accessibility from a different goal, will often come to make different accessibility recommendations, even when going by the same success criteria and techniques.</p>
+  <p>This professional judgement, which accessibility testers rely on to make decisions in cases that aren't clear-cut, is reflected in the reports they write. It is relatively easy to determine a tester&rsquo;s perspective based on their reports. This perspective has a lot to do with their role and their reason for doing accessibility testing. Here are just a few examples of the type of roles and perspectives we&rsquo;ve seen: </p>
+  <ol>
+    <li>A programmer may tend to be fairly literal and technical in their approach, particularly looking for invalid uses of web technologies. </li>
+    <li>An Accessibility evangelist and educator will often check that optimal solutions were used. </li>
+    <li>A person who does accessibility testing as a means to meet (legal) requirements may tend to be far more conservative with their findings, considering anything that's not a clearly documented problem as conforming to accessibility requirements.</li>
+  </ol>
+  <p>People go into accessibility testing and education for many different reasons. With such a variety of goals, it is not surprising that differences in interpretation can arise, especially given the subjective nature, and the abstract language of some of the WCAG 2.0 success criteria. By understanding where these difference come from, we can learn how we may go about resolving some of them. In section 4, we will take a deep dive into accessibility interpretations.</p>
+  <h3>3.3 Consequences of Inconsistent Accessibility Testing</h3>
+  <p>It is difficult to see how much test results differ between accessibility testers, unless you have them test the exact same thing. Many organizations that do accessibility testing have documentation on how to test, in an attempt to reduce inconsistencies. At the high end of the scale, it is likely organizations will not be able to reach more than 90% consistency. By comparing accessibility test results across organizations, countries, and disciplines it is common to find significant inconsistencies.
+  </p>
+  <p>Inconsistencies between accessibility tests are particularly problematic for people who rely on accessibility testing to identify issues, and for their performance metrics. It is understandably frustrating for an organization to have to make accessibility fixes in content that had previously passed an accessibility test, or when their metrics suddenly go down because they've used a different accessibility test tool.</p>
+  <p>The problem that comes with varying interpretations and test methods is, that despite their best effort, web developers can never be sure that an accessibility tester will confirm that a website meets its accessibility requirements. This problem grows for websites that are required to meet WCAG 2.0 in different countries, as each of them will have their own testing agencies, all of which may find different accessibility issues. This makes meeting all accessibility requirements a moving target, which makes the definition of &ldquo;done&rdquo; elusive.</p><p>Inconsistent accessibility testing results will inevitably lead to unnecessary remediation costs, by creating confusion about what exactly is and isn't an accessibility requirement. This takes one of two forms:</p>
+  <ol>
+    <li><strong>Under reporting</strong> - Accessibility issues were not reported during pre-production testing because of confusion about requirements. Remediation after development is more expensive.</li>
+    <li><strong>Over reporting</strong> - Code that met accessibility requirements as being inaccessible, causing confusion about the requirements and unnecessary remediation, taking away resources from other development tasks.</li></ol>
+  <p>The biggest problem with inconsistencies is that they undermines the credibility of the accessibility industry. This can lead to the impression that accessibility issues cannot be measured reliably, strengthening the argument against working on accessibility at all.</p>
+
+  <h2 id="diff">4. Causes of WCAG 2.0 Interpretation Differences</h2>
+  <h3>4.1 What is WCAG 2.0? </h3>
+  <p>Before we dive in to what causes differences in interpretation of WCAG 2.0, let&rsquo;s take a brief look at what WCAG 2.0 is.</p>
+  <p>The Web Content Accessibility Guideline (WCAG) 2.0 is the international standard for digital accessibility published by the W3C. In October 2012, the International Standards Organization (ISO) established WCAG 2.0 as the digital standard for accessibility. <a href="https://www.iso.org/standard/58625.html">ISO/IEC 40500:2012</a>. WCAG 2.0 is purposefully technology agnostic so it remains relevant as technologies change.</p>
+  <p>WCAG 2.0 has two types of content</p>
+  <ul>
+    <li>Normative - required for conformance
+      <ul>
+        <li><a href="https://www.w3.org/TR/WCAG20/#guidelines">WCAG 2.0 Success Criteria</a></li>
+        <li><a href="https://www.w3.org/TR/WCAG20/#conformance">WCAG 2.0 Conformance</a></li>
+        <li><a href="https://www.w3.org/TR/WCAG20/#glossary">WCAG 2.0 Glossary</a></li>
+      </ul>
+    </li>
+    <li>Informative - never required for conformance, for information purposes only
+      <ul>
+        <li><a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/">Understanding WCAG 2.0</a></li>
+        <li><a href="https://www.w3.org/TR/WCAG20-TECHS/">Techniques for WCAG 2.0</a></li>
+      </ul>
+    </li>
+  </ul>
+  <p>Some Testers are unaware of the difference between the normative and informative sections of WCAG 2.0. A major cause of confusion in WCAG 2.0 interpretation stems from one tester using the normative conformance requirements versus another tester using informative best practices and sufficient and/or failure techniques as a standard.</p>
+  <p>The WCAG normative texts can also be difficult to read. Because the success criteria must be testable and objective and universally applicable, they often can not be written in easy to read language. This can be particularly challenging for non-native English speakers.</p>
+  <h3>4.2 Who Uses WCAG?</h3>
+  <p>Many different types of people rely on WCAG. People with disabilities depend on accessibility guidelines so information technology is equally available to them. Designers and developers use the guidelines to help them proactively build systems that are universally accessible to all. QA Testers use them to validate that IT assets are accessible. Chief Accessibility, Compliance Officers and Product Managers use accessibility guidelines to proactively monitor and mitigate risks. Executives make decisions on the costs and benefits of the level of accessibility required by their organization. Accessibility Experts use these requirements to teach people how to design, build, test, maintain and monitor accessible information technology. Because IT is always evolving, accessibility solutions need to innovate as fast, if not faster than the leading technologies. Accessibility researchers have the opportunity to build a better future by leveraging accessibility guidelines as a driver of innovation.</p>
+  <p>These are just a hand full of different roles that use WCAG in their daily work. Considering the diverse audiences that use accessibility guidelines and their unique needs, it is no surprise that interpretations of what is required to meet the standard can be highly influenced by individual perspectives. See <a href="#append">Appendix A: Diverse Audience Roles of Accessibility Requirements</a>.</p>
+
+  <h3>4.3 Goals for using WCAG</h3>
+  <p>Researchers, trainers, designers, developers and testers are some of the key roles responsible for making accessibility a reality. But, considering their current primary objective, individuals in theses roles may fall on significantly different points along the accessibility spectrum (See <a href="#append">Appendix A: Diverse Audience Roles of Accessibility Requirements</a> for a more detailed list of stakeholders, roles, needs and benefits).
+  </p>
+  <p>Let&rsquo;s define the accessibility spectrum as a range of objectives from low to high with the six major sections being:</p>
+  <ol>
+    <li>None</li>
+    <li>Optional</li>
+    <li>Some compliance</li>
+    <li>Minimum compliance </li>
+    <li>Optimal - technically possible today</li>
+    <li>Ideal - invents a better future</li>
+  </ol>
+  <strong>
+  <p><img alt="6 point spectrum of accessibility from left to right.  1) None. 2) Optional. 3) Some Compliance. 4) Minimum Compliance. 5) Optimal. 6. Ideal. Mapped onto the spectrum are 5 of the different roles who apply the accessibility standard to their work.  Researchers (Primarily optimal to ideal with some minimum compliance).  Trainers (Primarily Optimal with a nod to minimum and ideal). Designers (the full spectrum, but primarily found in some to minimum compliance).  Developers (the full spectrum, but primarily found in some to minimum compliance).  Testers primarily at minimum compliance but can also be found in optimal and even ideal.  " title="The Accessibility Spectrum" src="images/AccessibilitySpectrum.png" width="602" height="339" /></p>
+
+  </strong>
+  <p>For illustration purposes, let&rsquo;s map five roles onto the accessibility spectrum of objectives. Assumptions:  people in the research, train, and test role have the knowledge, skills, and motivation to do high quality accessibility work that at least meets minimum compliance. People in the design and develop role may or may not have the necessary accessibility knowledge, skills and/or motivation to do high quality accessibility work that meets minimum compliance.</p>
+  <ul>
+    <li><strong>Research</strong> - many accessibility researchers range from optimal to ideal. Some researchers may focus on minimum compliance, but with a maximizing efficiency twist, using more advanced methods to automate or use AI to help reduce cost of designing, developing, and/or testing.</li>
+    <li><strong>Train</strong> - accessibility trainers may range from minimum compliance to ideal.</li>
+    <li><strong>Design</strong> - web designers may range from none to ideal. </li>
+    <li><strong>Develop</strong> - web developers may range from none to ideal.</li>
+    <li><strong>Test</strong> - accessibility testers may range from minimum compliance to ideal.</li>
+  </ul>
+  <p>Let&rsquo;s look at some examples of where a person&rsquo;s role and primary objective may influence where they are on the accessibility spectrum. An individual person in a role shown in the diagram above may fall anywhere on the accessibility spectrum depending on their current primary objective.</p>
+  <h4>Examples of Individuals on the Accessibility Spectrum: </h4>
+  <ul>
+    <li><strong>Accessibility researcher</strong> - an individual accessibility researcher may focus on the optimal and ideal end of the spectrum. They need to be able to understand the current state of accessibility requirements and their adoption, so they can identify gaps and have the opportunity to move accessibility forward in profound and meaningful ways. </li>
+    <li><strong>Accessibility trainer</strong> - an individual accessibility trainer may focus on the optimal while including (but not emphasizing) minimum compliance. They need to be able to understand the accessibility requirements, so they can teach designers and developers how to design and build digital content and functionality that proactively meets requirements and provides a good user experience for all people, including those with disabilities.</li>
+    <li><strong>Designer / developer</strong> - an individual designer or developer focused on universal design may tend to aim for optimal solutions. They may have to resort to a minimum compliance viewpoint for a sprint due to resource constraints or technical barriers. &nbsp;They need to be able to understand the accessibility requirements, so they can proactively design and code frontend user interfaces that meet requirements and create a good user experiences for all people, including those with disabilities. Developers and designers new to accessibility may think they are meeting requirements but only achieving partial compliance. </li>
+    <li><strong>Accessibility tester</strong> - Accessibility testers range from minimum compliance to ideal, depending on their primary objective.</li></ul>
+  <p>Researchers, trainers, designers, developers and testers are just some of the roles responsible for making accessibility a reality. See <a href="https://docs.google.com/document/d/1L9OYaP052j2uxVu-8IXGxzwQsHdx8G6YKrxpHo7BZ_w/edit#heading=h.n6vz2i72mi6">Appendix A: Diverse Audience Roles of Accessibility Requirements</a> for a more detailed list of stakeholders, roles, needs and benefits).<strong>
+  </strong></p>
+  <p>Recognizing that there is a wide spectrum of motivations for incorporating accessibility helps explain why we see so many differences in interpretations. As professionals, we must agree on which accessibility interpretation we are using so we can be consistent and accurate.</p>
+  <h3>4.4 What causes differences in understanding/interpreting accessibility requirements?</h3>
+  <p>There is a natural tension between users, designers, developers, testers, project managers and executives. Is it possible to establish an accessibility standard that balances the needs of each of these different perspectives? Let&rsquo;s look at the motivations that lead to strikingly different opinions on what the accessibility requirements should be.</p>
+  <h4>4.4.1 High Accessibility Standards</h4>
+  <p><strong>People with disabilities</strong> want and need equal access. They deal with barriers and discrimination every day. They are tired of waiting for basic civil rights. Sometimes a person with disabilities may have a hard time differentiating between a requirement and a personal preference.</p>
+  <p><strong>Accessibility researchers, evangelists, trainers and testers</strong> envision how digital equality can be achieved right now. They tend to be dissatisfied with just removing the critical and serious barriers. They may want to solve problems so much that they are willing to spend a lot of time and energy. They may use accessibility standards as a driver of innovation.</p>
+  <p><strong>Accessibility-minded designers</strong> realize accessibility is the parameter that leads to the highest levels of universal design; design so thoughtful it works for everyone from the start. They may use accessibility as inspiration.</p>
+  <p><strong>Accessibility-minded developers</strong> know that accessibility is the foundation for robust solutions. They are highly motivated by these challenges, knowing that coding to accessibility requirements leads to a product they can be very proud of.</p>
+  <h4>4.4.2 Zero to Minimum Accessibility Standard</h4>
+  <p><strong>Designers</strong> new to accessibility may resent the requirements and see them as overly restrictive and unreasonable. <strong>Developers</strong> who think the accessibility standard will only benefit people with disabilities may not be motivated to change their code patterns. Under the pressure of deadlines and an endless backlog of demands, some developers may try to get away with ignoring these requirements.</p>
+  <p><strong>Executive leaders, legal counsel and compliance officers</strong> have to balance the cost of digital accessibility with the benefits and risks. A conservative decision to meet minimum requirements can be a valid approach for an organization with very limited resources and other critical priorities. Some executives even take a risk by delaying accessibility to a later release altogether. </p>
+  <h4>4.4.3 Moderate Accessibility Standard</h4>
+  <p><strong>Accessibility Researchers</strong> who understand that the world has limited resources look for ways to solve problems efficiently. They understand that while it may be possible to require every developer in the world to code an accessibility patch, if that same problem can be solved at the user agent level, accessibility of that item can be established by default, freeing developers everywhere to work on solving other challenges that face us as a society.</p>
+  <p><strong>Chief Accessibility Officers</strong> do not have unlimited budgets to train, monitor, and enforce the standard. They often encourage others to strive for best practices whenever possible. They must calculate the ROI on any accessibility requirement above the minimum. For the holistic health of the organization, they must select a standard of accessibility that meets the needs of people with disabilities while also allowing the business to be sustained.
+  </p>
+  <p><strong>Executives</strong> have many competing demands and limited resources. To remain in business, executives have to make tough decisions on how much to spend on accessibility. Smart executives see that proactively establishing a reasonable accessibility standard saves them time, money, and produces a better product. When implementing accessibility at a level higher than the minimum required, they must weigh the ROI against all their other priorities.</p>
+  <h2 id="peace">5. Accessibility Peace Model</h2>
+  <p>A lot of time can be lost arguing over what the &ldquo;correct&rdquo; interpretation of WCAG 2.0 is. &nbsp;These range from &ldquo;least effort, in order to comply with regulations&rdquo; to &ldquo;looking for an optimal user experience&rdquo;. People testing WCAG with these two different perspectives in mind will inevitably reach different conclusions.</p>
+  <p>The Accessibility Peace Model recognizes that there are different ways of interpreting WCAG 2.0, none of which is perfect in every possible situation. For instance, it is possible to be WCAG 2.0 compliant and skip some heading levels. While heading levels may be skipped, presentation should be used to determine what heading level might be appropriate. This is fairly nuanced, and much harder to understand than a simple &ldquo;don&rsquo;t skip heading levels&rdquo; rule. So, it makes a lot of sense to test for skipped headings during code review, and leave the nuanced discussion and weighing up to the compliance officers in case one got overlooked.
+  </p>
+  <p>WCAG 2.0 certainly wasn&rsquo;t intended to allow for multiple interpretations. But many people have approached accessibility from very different angles, fitting WCAG 2.0 to their particular needs. This makes it problematic to say that one &ldquo;interpretation&rdquo; is more or less correct than another. Different interpretations serve different needs. In other words, these differences exist for a valid reason. &nbsp;An interpretation paired with an ideal perspective can be as equally valid as an interpretation paired with a minimum perspective.</p>
+  <p>The Accessibility Peace Model recognizes that <strong>there are different, equally valid, ways to use WCAG 2.0</strong>. To get consistent results, organisations should define with what perspective they want their tests to be done. This is by no means the only measure that needs to be taken to ensure consistency, but it does make discussions on interpretations significantly more effective. To help set expectations for results, the Accessibility Peace Model defined three viewpoints along the spectrum of interpretations: </p>
+  <ul>
+    <li><strong>Minimum</strong> - Content is only non-compliant if this can be proven without any doubt, based exclusively on the normative text of the accessibility guidelines.</li>
+    <li><strong>Optimized</strong> - Interpretations are based on the intent of success criteria, gauged by all the information provided by the W3C about the accessibility guidelines. </li>
+    <li><strong>Idealized</strong> - Maximise accessibility by requiring that suboptimal user experience solutions be avoided and that best practice techniques always be used as a way to pass success criteria.</li>
+  </ul>
+  <h3 id="min">5a. Minimum Interpretation</h3>
+  <h4>How do you define it?</h4>
+  <p>Minimum Interpretation is based on the normative text of the technical requirement. The starting point for this interpretation is that content is compliant until proven otherwise. It is very important to understand the differences between normative and informative.</p>
+  <p>The following is the definition of &ldquo;normative&rdquo; from WCAG 2.0:</p>
+  <ul>
+    <li><strong>normative</strong> - required for conformance
+      <ul>
+        <li>Note 1: One may conform in a variety of well-defined ways to this document.</li>
+        <li>Note 2: Content identified as &quot;<a href="https://www.w3.org/TR/WCAG20/#informativedef">informative</a>&quot; or &quot;non-normative&quot; is never required for conformance.</li>
+      </ul>
+    </li>
+    <li><strong>informative</strong> - for information purposes and not required for conformance.
+
+      <ul>
+        <li>Note: Content required for <a href="https://www.w3.org/TR/WCAG20/#conformancedef">conformance</a> is referred to as &quot;<a href="https://www.w3.org/TR/WCAG20/#normativedef">normative</a>.&quot;<strong>
+        </strong></li>
+      </ul>
+    </li>
+  </ul>
+  <strong>
+  <p>For WCAG 2.0, only the following texts are normative:</p>
+  </strong>
+  <ul>
+    <li><a href="https://www.w3.org/TR/WCAG20/#guidelines">WCAG 2.0 Success Criteria</a></li>
+    <li><a href="https://www.w3.org/TR/WCAG20/#glossary">WCAG 2.0 Glossary</a></li>
+    <li><a href="https://www.w3.org/TR/WCAG20/#conformance-reqs">WCAG 2.0 Conformance Requirements</a><strong>
+    </strong></li>
+  </ul>
+  <p>Informative text that can be used for research and understanding, but never for final decision making. Some of the WCAG 2.0 informative texts are: </p>
+  <ul>
+    <li><a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/">Understanding WCAG 2.0</a> is informative and should be reviewed to provide context. But interpretation decision must be fully based on WCAG 2.0 normative text.</li>
+    <li><a href="https://www.w3.org/TR/WCAG-TECHS/">Techniques for WCAG 2.0</a> are informative and therefore not required. They should be reviewed to provide context. &nbsp;But interpretation decisions must be fully based on WCAG 2.0 normative text<strong>. </strong></li>
+  </ul>
+  <p>When there are two reasonable interpretations, support the narrower interpretation because it is all that is minimally required.</p>
+  <h4>Who uses this?</h4>
+  <p>This interpretation is particularly useful for organizations with urgent accessibility issues to resolve. Legislation may have changed and suddenly many new requirements have to be met. With limited resources and short deadlines, difficult decisions have to be made.
+  </p>
+  <p>Accessibility remediation is a costly endeavour that is often a result of tech debt. This interpretation is particularly useful when retrofitting websites that weren&rsquo;t built with accessibility in mind. Executive leaders, legal counsel, and compliance officers need to know what the absolute minimum requirement is so they can make informed decisions about which problems to solve now and which should be done in the inevitable redesign.</p>
+  <p>It may seem like the minimum interpretation is one that makes the most business sense, since it focuses on the least number of changes necessary. However, many years of experience shows us that this isn&rsquo;t the case. This interpretation is particularly poor for teaching accessibility. By focusing on the legal requirements, this mindset ignores that accessibility is about people and good design. Many people (developers and designers included) struggle doing work they don&rsquo;t see the benefit of. This inevitably leads to cutting corners that are costly to resolve after the fact. Once this initial &ldquo;bar&rdquo; is crossed, organizations should transition into using the optimized interpretation, since it is far less costly to maintain long term accessibility.</p>
+  <h3 id="optimized">5b. Optimized Interpretation</h3>
+  <h4>How do you define it? </h4>
+  <p>Optimized Interpretation is based on the spirit and intent of the normative technical requirement, rather than just minimum compliance. Optimized is smart and sustainable universal design. It suggests a pragmatic inclusive design approach that balances equal access, civil rights, and actual outcomes for users with disabilities with what is technically possible and reasonable to achieve today.</p>
+  <p>The WCAG 2.0 Understanding documents are particularly important in implementing this interpretation. They give guidance to what kinds of accessibility concerns should be addressed in the content. The focus here is on striking a balance between the needs of users as they are described in the understanding documents and the effort to put into these features.</p>
+  <p>If it takes minimal effort to create something in a way that falls within a user&rsquo;s needs as described in the understanding document, then the optimal interpretation requires that this is how it must be created, even if it can be argued that the normative part of WCAG does not explicitly require it.</p>
+  <h4>Who uses this?</h4>
+  <p>The optimal interpretation is about creating a balance between the needs of users with disabilities and competing business needs. It is useful in organizations that want to maintain a steady level of accessibility in the long term without breaking the bank.</p>
+  <p>Teaching the optimal interpretation to developers, designers, and QA testers will help them to be motivated about accessibility. It teaches them there are good business reasons to not cut corners when doing accessibility, but also that there are competing business priorities to meet so that they shouldn&rsquo;t go overboard and try to create ivory tower accessibility.</p>
+  <h3 id="ideal">5c. Idealized Interpretation</h3>
+  <h4>How do you define it?</h4>
+  <p>Idealized interpretation is based on a human factors approach that extends beyond legal compliance and pragmatic best practices. The idealized interpretation focuses on the quality of the user experience for people with disabilities and innovative breakthroughs that eliminate barriers once considered impossible to solve.
+  </p>
+  <p>This approach prioritizes equal access and civil rights while also striving for delightful usability for people with disabilities. Even when there is no readily available solution or implementation is very expensive, the idealist meets the challenge head on, refusing to be satisfied with mediocrity.</p>
+  <p>An idealized interpretation of digital accessibility would be based on the following:</p>
+  <ul>
+    <li>Research
+      <ul>
+        <li>Usability Studies with real people with disabilities</li>
+      </ul>
+    </li>
+    <li>Informative - elevates informative documents 
+      <ul>
+        <li><a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/">Understanding WCAG 2.0</a></li>
+        <li><a href="https://www.w3.org/TR/wai-aria-practices-1.1/">Techniques for WCAG 2.0</a></li>
+        <li><a href="https://www.w3.org/TR/wai-aria-practices-1.1/">WAI-ARIA Authoring Practices Working Draft</a></li>
+      </ul>
+    </li>
+    <li>Pre-Normative
+      <ul>
+        <li><a href="https://www.w3.org/TR/WCAG21/">WCAG 2.1 Success Criteria</a> (before finalization)</li>
+      </ul>
+    </li>
+    <li>Normative
+      <ul>
+        <li> <a href="https://www.w3.org/TR/WCAG20/#guidelines">WCAG 2.0 Success Criteria</a></li>
+        <li> <a href="https://www.w3.org/TR/WCAG20/#glossary">WCAG 2.0 Glossary</a></li>
+        <li> <a href="https://www.w3.org/TR/WCAG20/#conformance-reqs">WCAG 2.0 Conformance Requirements</a></li>
+      </ul>
+    </li>
+  </ul>
+  <h4>Who uses this?</h4>
+  <p>Accessibility experts, people with disabilities, savvy designers, and developers know that accessibility can be used as a catalyst for innovation. Just because something is challenging today, does not mean we should not do it.</p>
+  <p>This focus on a delightful experience for users with disabilities can be useful for organizations that treat accessibility as a high priority. Some organizations use universal design as a competitive advantage, broadening their market reach. Organizations with a social function and organizations trying to set an example will often use the idealized interpretation.
+  </p><p>Teaching the idealist interpretation isn&rsquo;t just about understanding the needs of people with disabilities. Finding the ideal solution often requires an understanding of assistive technologies and user agents. This is a much higher bar to cross, and a costly one at that. Not every developer, designer, or QA tester needs to be an expert on assistive technologies. Organizations using the idealized interpretations will need at least one of these accessibility experts available to every team.</p>
+  <h2 id="standard">6. Standardization</h2>
+  <p>The idea of a &ldquo;minimum&rdquo;, &ldquo;optimized&rdquo;, and &ldquo;idealized&rdquo; accessibility solution may sound familiar. Many people incorrectly think that is what the WCAG 2.0 levels A, AA and AAA were intended to do. However, this is not the case, no definition was ever written for what should go into which level. The Understanding Conformance document lists a number of aspects that were considered. For example, how weighing was done, or why some criteria seem to have multiple versions over multiple levels, and others did not.</p><p>There certainly are some gaps that were known to the WCAG Working group, even at the time WCAG 2.0 was published. The clearest evidence for that, being that right after publishing WCAG 2.0, the WCAG Working Group published advisory techniques in addition to the sufficient techniques, clearly signalling that there are &ldquo;better&rdquo; solutions which may not necessarily be covered by WCAG.</p>
+  <h3>6a. WCAG Techniques</h3>
+  <p>It is incorrect to use WCAG Techniques to decide if something is a normative WCAG violation. There are three types of techniques, and each of them can tell us a little bit about where to draw the line with regard to a particular criteria. This determination varies for each type of techniques: Failure, Sufficient, and Advisory.</p>
+  <h4>WCAG Failure Techniques</h4>
+  <p>Despite not being normative themselves, the Failure techniques are a clear way to know that something is a WCAG violation. Any occurance of a Failure technique must therefore be a failure, no matter how you interpret WCAG. Unfortunately, the number of Failure techniques is relatively limited. Going forward, <a href="https://www.w3.org/TR/act-rules-format/">Accessibility Conformance Testing Rules </a>might solve this, as they will be much more precise and there will hopefully be more of them.</p>
+  <h4>WCAG Sufficient Techniques</h4>
+  <p>Things get a little more complicated with sufficient techniques. In a minimum WCAG interpretation, the sufficient techniques tell you when some content passes a criterion, but not when it failed them. There is a non-exhaustive list of ways a success criterion could be passed, but what happens if that isn&rsquo;t the case? The minimum interpretation bases failures on normative text only. Sufficient techniques do not provide any evidence of something failing WCAG.</p>
+  <p>In an optimized approach, it is relatively common to require documented techniques to pass WCAG. Not using a documented technique is often treated as evidence of a WCAG Failure from an ideal or optimized perspective, even though Understanding Techniques  document clearly states this is not the intent of the techniques. This can lead to some significant difference with the minimum perspective. Many accessibility test tools operate from an optimized or idealized perspective: if one of the known techniques wasn&rsquo;t used, than the outcome is considered a WCAG issue. It is the authors&rsquo; opinion that accessibility testing tools should allow the user to choose a minimum, optimized, or idealized perspective for automated testing.<strong></strong><strong>
+  </strong></p>
+  <p>The idealized interpretation takes this even further, picking what is considered the &ldquo;best&rdquo; technique as the only valid way of passing a success criterion or even inventing entirely new requirements. For instance, some testers require the use of landmarks as a way to meet 2.4.1 Bypass Blocks, even though there are several other sufficient techniques.</p>
+  <h4>WCAG Advisory Techniques</h4>
+  <p>The advisory techniques are equally interesting. In a minimalist testing approach, there is evidence of things that should not be considered WCAG violations. They give an indication of what is outside the scope of WCAG. For instance, advisory technique G141 says to use HTML headings in order (h1 is followed by h2, not by h3). To the minimalist, the &lsquo;advisory&rsquo; label indicates that this actually isn&rsquo;t required by WCAG.</p>
+  <p>The idealist might argue differently, in that the advisory technique could be considered the &ldquo;best&rdquo; way to meet a particular requirement. From that perspective, it is actually better if advisory techniques are a requirement of an idealized accessibility test.</p>
+  <h3>6b. Accessibility Conformance Testing</h3>
+  <p>In 2016, the Accessibility Conformance Testing (ACT) Task Force of AGWG started working on a new recommendation on how to describe rules for accessibility testing. Based on the work of the Auto-WCAG Community group, which developed rules for automated test tools, the ACT Task Force aims to develop rules both for manual and automated testing. These rules will do what generally most organizations have historically done for themselves: define procedures on how accessibility testing should be done in order to get greater consistency.
+  </p><p>If these rules end up as notes published by the W3C, they will have a similar effect to Failure techniques, giving a clear baseline that even minimum interpretation can&rsquo;t (or at least shouldn&rsquo;t) ignore. Unlike the Failure techniques, the ACT Rules will be designed specifically for accessibility testing. In summary, we will have a much clearer test definition to follow and good and bad test cases to calibrate the test procedure and tools with.</p>
+  <h3>6c. Accessibility Guidelines 3.0</h3>
+  <p>Understanding that there are different perspectives on accessibility testing can help in the design of the next major version of the accessibility guidelines. It would make sense to base the levels of conformance on these different testing perspectives. As it stands today, in WCAG 2.0 the differences between level A and AA isn&rsquo;t too great in practice. Most organizations are required to meet level AA, and very few use the WCAG levels to prioritize issues.</p>
+  <p>Making the conformance levels match with the accessibility stakeholders&rsquo; views on what is minimum, optimized, and idealized has a number of benefits:</p>
+  <ol>
+    <li>It gives a place for these different perspectives, right in the standard. If we&rsquo;re all clear on what the different levels mean, if each has a good definition that accessibility experts can draw their understanding from, we can avoid a lot of the arguments we have now that arise from us having these different perspectives.<br>
+      <br>
+    </li>
+    <li>It gets us away from arguing if criterion X is more important than Y. What we&rsquo;d do instead is ask ourselves for both X and Y, what is minimum, what is optimized, and what is ideal. Criteria flow from the answers we give on each of those.<br>
+      <br>
+    </li>
+    <li>It creates a clear prioritization for organizations to follow. This worked a little better back with WCAG 1.0. For example, priority 1 was to mark data tables up with headings, and priority 2 was to not use tables for layout that couldn&rsquo;t be properly linearized.</li>
+  </ol>
+  <strong>
+  <h2 id="rec">7. Recommendations</h2>
+  </strong>
+  <p>Over the years, a lot of time has been spent arguing back and forth over how to interpret WCAG 2.0. It is clear that there are different approaches to using the standard, useful in different situations. Before doing any design, development or accessibility testing, we recommend looking at the accessibility objective for the product. Knowing your accessibility objective will help you understand what interpretation is most appropriate. </p>
+  <ol>
+    <li><strong>Meet Requirements (Minimum) </strong>- Organizations that urgently need to make existing products compliant to WCAG 2.0 are often best off following a <strong>minimum interpretation</strong>. Fixing the WCAG 2.0 minimum barriers first is an excellent use of limited resources in a very short time frame. Although not a great fit for maintaining accessibility websites in the long run, this interpretation helps decide on what must happen now, and what can wait.<br>
+      <br>
+    </li>
+    <li><strong>Sustainable Universal Design (Optimized)</strong> - For organizations that are starting a new project, or that have a (mostly) accessible website now and are looking to keep it this way, the <strong>optimized interpretation</strong> is the best fit. It establishes buy-in from designers and developers based on the intrinsic benefits of universal design. It requires balanced decisions between the needs of users and those of the business.<br>
+      <br>
+    </li>
+    <li><strong>Boldly Go Where No One Has Gone Before (Idealized)</strong> - When trying to push the boundaries of what&rsquo;s technically possible today, organizations often use the <strong>idealized interpretation</strong>. Striving for an ideal approach may be difficult to balance with business needs, but can create exceptional long term value. Amazing accessibility advancements occur when research and development improves reusable components and pattern libraries. However, it could take a great deal of time, money, resources, testing, and expertise with assistive technology to consistently work at this level. <strong>
+    </strong></li>
+  </ol>
+  <p>The chosen interpretation should be established and communicated in the project definition and reinforced in advance of any design, development, and testing. Testers must confirm which interpretation to use, to ensure they&rsquo;re not spinning developers in circles. For example: A project using the minimum interpretation expects issues to only be reported for WCAG normative violations. But a tester using an optimized interpretation would also report best practice violations. Developers become frustrated because new issues come up in content they already thought was accessible.</p>
+  <h3>Best Practices and Accessibility Optimization</h3>
+  <p>In the struggle of who has the &ldquo;right&rdquo; interpretation of WCAG 2.0, there really aren&rsquo;t any winners. Furthermore, the people losing out are those who could have benefitted from that time spent in more productive ways. By acknowledging that these perspective exist, we hope to end pointless discussions and gain an understanding of where these differences come from. To truly get away from unproductive discussion, we will need to find common ground.</p>
+  <p>It seems unlikely to the authors that the end of the A11Y Interpretation War can be achieved with a single white paper. We believe that future accessibility standards can help address this problem by using the Accessibility Peace Model. There is certainly no silver bullet solution there, but one way may be promising is by working with best practices and optimization suggestions:</p>
+  <ol>
+    <li><strong>Best Practice:</strong> A rule that should always be applied by designers and developers to new products which will certainly improve its accessibility, but which may or may not be a violation of WCAG 2.0, depending on the context.<br>
+      <br>
+    </li>
+    <li><strong>Optimisation: </strong>A technique that has the widest possible support, and will work for the most amount of users, irrespective of the accessibility support baseline that was set to meet the WCAG 2.0 conformance requirements.<strong>
+    </strong></li>
+  </ol>
+  <h2 id="ack">8. Acknowledgements</h2>
+  <p>We want to thank the following accessibility experts for reviewing drafts of this white paper and providing insightful feedback. We take full responsibility for this original content. In other words, just because someone reviewed our white paper, does not mean they fully agree with everything we said.</p>
+  <h3>Reviewers:</h3>
+  <ul>
+    <li>Anik Ganguly</li>
+    <li>Dylan Barrell</li>
+    <li>John Foliot</li>
+    <li>Mary Jo Mueller</li>
+    <li>Susanna Laurin</li>
+    <li>Andrew Arch</li>
+    <li>Anonymous expert reviewer 1<strong>
+    </strong></li>
+  </ul>
+  <h2 id="append">Appendix A: Diverse Audience Roles of Accessibility Requirements</h2>
+  <p>Source of Roles based on research by W3C Silver Task Force: <a href="https://www.w3.org/WAI/GL/task-forces/silver/wiki/Main_Page#Silver_Stakeholders">Silver Stakeholders</a>: </p>
+  <p><a href="https://docs.google.com/spreadsheets/u/1/d/128vPnCweXN9t4JBG7-AOeBhT-KquaWXcCsi3H-f8u94/preview">Stakeholder Roles and Activities</a></p>
+  <ul>
+    <li>Use it</li>
+    <li>Make it</li>
+    <li>Test it</li>
+    <li>Monitor risk/benefit</li>
+    <li>Invest in it / Profit from it</li>
+    <li>Teach it</li>
+    <li>Innovate it<strong>
+    </strong></li>
+  </ul>
+  <strong>
+  <p><img alt="word cloud consisting of these words:  invest, monitor, use, test, innovate, make, profit, teach" src="images/a11yroles.png" width="602" height="389" /></p>
+  </strong>
+  <p>Let&rsquo;s look closer at the diverse audiences of accessibility requirements and explore their unique needs. </p>
+
+  <h3>People who use IT</h3>
+  <p><strong>People with disabilities</strong> benefit directly when digital accessibility requirements are met.</p>
+  <ul>
+    <li>Role: As a person with a disability (visual, auditory, motor, speech and/or cognitive)</li>
+    <li>Need: I need to be able to use information technology </li>
+    <li>Benefit: So I can access the same information and functionality as people without disabilities </li>
+  </ul>
+
+  <p><strong>People without disabilities </strong>- Every consumer (with or without disabilities) can benefit from accessibility requirements. When accessibility is done with an eye towards universal design, the user experience improves for all people. </p>
+  <ul>
+    <li>Role: As a person</li>
+    <li>Need: I want to be able to easily use information technology</li>
+    <li>Benefit: So I can access information and functionality efficiently and effectively</li>
+  </ul>
+  <h3>People who Specialize in IT Accessibility</h3>
+  <p><strong>Accessibility Trainers</strong> use these requirements as subset of the materials to teach the core concepts of digital accessibility.</p>
+  <ul>
+    <li>Role: As an accessibility trainer</li>
+    <li>Need: I need to be able to understand the accessibility requirements</li>
+    <li>Benefit: So I can teach designers and developers how to design and build digital content and functionality that will meet or exceed the accessibility requirements.</li></ul>
+  <p><strong>Accessibility Design/Development Consultants</strong> use these requirements to help people build and maintain accessible information technology.</p>
+  <ul>
+    <li>Role: As an accessibility development consultant</li>
+    <li>Need: I need to be able to understand the accessibility requirements</li>
+    <li>Benefit: So I can guide designers and developers to proactively build and maintain digital content and functionality that will meet or exceed the accessibility requirements.</li></ul>
+  <p><strong>Accessibility Testers</strong> use these requirements to conduct compliance assessments.</p>
+  <ul>
+    <li>Role: As an accessibility tester</li>
+    <li>Need: I need to be able to understand the accessibility requirements</li>
+    <li>Benefit: So I can accurately test and consistently report accessibility compliance or identify accessibility barriers</li></ul>
+  <p><strong>Accessibility Researchers</strong> use these requirements to identify opportunities to invent better solutions.</p>
+  <ul>
+    <li>Role: As an accessibility research</li>
+    <li>Need: I need to be able to understand the current state of accessibility requirements and their adoption</li>
+    <li>Benefit: So I can identify gaps and have the opportunity to move accessibility forward in profound and meaningful ways. 
+  </li></ul>
+  <h3>People who Build IT</h3>
+  <p><strong>User Agent Developers</strong> are the ones who build the browsers (like Chrome, Edge Firefox, IE and Safari) and assistive technology (like screen readers and screen magnifiers and browser extensions).</p>
+  <ul>
+    <li>Role: As a user agent developer</li>
+    <li>Need: I need to be able to understand the accessibility requirements</li>
+    <li>Benefit: So I can build and maintain a user agent that integrates into the accessibility ecosystem. </li></ul>
+  <p><strong>IT Project Managers/Scrum Masters</strong> use accessibility requirements to help define the scope for the project, define the tasks and agree on the definition of done. </p>
+  <ul>
+    <li>Role: As an IT Project Manager and/or Scrum Master </li>
+    <li>Need: I need to be able to understand the accessibility requirements</li>
+    <li>Benefit: So I can define the work to be done as SMART tasks (specific, measurable, achievable, relevant, time bound).</li>
+  </ul>
+  <p><strong>IT Designers</strong> use accessibility requirements to understand the needs of people with disabilities so that the design solution will meet the needs of all users (including pwd).</p>
+  <ul>
+    <li>Role: As an IT Designer </li>
+    <li>Need: I need to be able to understand the accessibility requirements</li>
+    <li>Benefit: So I can proactively create design solutions that meet the needs of all people regardless of disabilities.</li>
+  </ul>
+  <p><strong>IT Frontend Developers</strong> use accessibility requirements to understand the needs of people with disabilities so that the front end code they develop will be usable by all people (including pwd).</p>
+  <ul>
+    <li>Role: As an IT Frontend Developer</li>
+    <li>Need: I need to be able to understand the accessibility requirements</li>
+    <li>Benefit: So I can proactively code front-end user interfaces that can be used by all people regardless of disabilities. </li>
+  </ul>
+  <p><strong>QA Testers</strong> use these requirements to identify basic accessibility bugs.</p>
+  <ul>
+    <li>Role: As a QA tester</li>
+    <li>Need: I need to be able to understand the basic accessibility requirements</li>
+    <li>Benefit: So I can accurately test and consistently report accessibility basic accessibility bugs</li>
+  </ul>
+  <h3>People who monitor IT compliance</h3>
+  <p><strong>Chief Accessibility Officers</strong> use these requirements to establish, communicate, monitor and enforce a measurable and reasonable accessibility standard for their organization.</p>
+  <ul>
+    <li>Role: As the Chief Accessibility Officer</li>
+    <li>Need: I need to understand the accessibility requirements</li>
+    <li>Benefit: So I can establish, communicate, monitor, and enforce a measurable and reasonable accessibility standard for the organization.
+    </li>
+  </ul>
+  <p><strong>Compliance Officers</strong> use these requirements to monitor and mitigate risk caused by non-compliance.</p>
+  <ul>
+    <li>Role: As a Compliance Officer</li>
+    <li>Need: I need to understand the accessibility requirements</li>
+    <li>Benefit: So I can monitor and mitigate risk caused by non-compliance. </li></ul>
+  <h3>People who profit from IT</h3>
+  <p><strong>Executive Leaders </strong>use these requirements to </p>
+  <ul>
+    <li>Role: As an Executive Leader</li>
+    <li>Need: I need to understand the ROI of accessibility requirements</li>
+    <li>Benefit: So I can make smart business decisions about the accessibility standard that is set for my organization, the resources spent to be compliant and leverage accessibility as a form of innovation.</li>
+  </ul>
+  </div>
+
+</div>
+</body>
+</html>
